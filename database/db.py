@@ -52,6 +52,15 @@ def create_tables():
         amtpaid REAL DEFAULT 0
     )
     """)
+    cur.execute("""
+        INSERT OR IGNORE INTO admins
+        VALUES (?,?,?,?)
+    """, (
+        "2005",
+        "Balu",
+        "Manager",
+        hashlib.sha256("admin2005".encode()).hexdigest()
+    ))
 
     conn.commit()
     conn.close()
