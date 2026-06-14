@@ -1,5 +1,5 @@
 import sqlite3
-
+import hashlib
 DB_NAME = "database/bank.db"
 
 def get_connection():
