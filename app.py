@@ -84,7 +84,8 @@ elif menu == "User Login":
             if user:
                 st.session_state.logged_in = True
                 st.session_state.userid = userid
-
+                st.rerun()
+            
             else:
                 st.error("Invalid Credentials")
 
@@ -130,6 +131,7 @@ elif menu == "User Login":
                     "Updated Balance:",
                     get_balance(userid)
                 )
+                st.stop()
 
         elif action == "Withdraw":
 
